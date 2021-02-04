@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
+@mixin font_roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+}
+
+@mixin font_sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+// *    FOR CENTERING THE TEXT AREAS
+@mixin center_flex{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+}

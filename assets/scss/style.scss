@@ -1,0 +1,201 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+
+    padding: 0;
+    margin: 0;
+
+    // !    MAIN
+
+    #wrapper_main{
+        background-color:$font_c;
+        width: 84vw;
+        margin: 80px 8vw;
+        //height: 300vh ;  //!  to correct
+
+
+        // !    TITLE
+        #titel_page{
+            width: 100%;
+            height: 90vh;
+            background: url("../img/titel-bild.jpg") center/cover no-repeat;
+            @include center_flex;
+
+            h1{
+                color: $wh;
+                @include font_roboto;
+                font-size: 2.5em;
+            }
+            img{
+                width: 40px;
+                opacity: .8;
+                bottom: 100px;
+                transform: translateY(140px);
+                &:hover{
+                    opacity: .4;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        // !    TEXT - 2nd PAGE
+
+        #text_page{
+            height: 100vh;
+            @include center_flex;
+
+            .text_area{
+                width: 55%;
+                text-align: center;
+
+                h2{
+                    @include font_roboto;
+                    color: $h_c;
+                    font-weight: 400;
+                    font-size: 2.12em;
+                }
+
+                p{
+                    @include font_sans;
+                    color: $p_c;
+                    opacity: .8;
+                }
+
+                a{
+                    color: rgb(100, 175, 255);
+                    text-decoration: none;
+                    opacity: 1;
+                    &:hover{
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+
+        // !    GALLERY  from 3nd PAGE
+        // *    FIRST GALLERY AS FLEX
+        #first_gall{
+            width: 90%;
+            margin-left: 5%;
+             
+            display: flex;
+            justify-content: space-between;
+
+            img{
+                display: inline-block;
+                width: 50%;
+                margin-top: 30px;
+                
+                }
+            }
+
+             
+        }
+
+        // !    Second TEXT BLOCK
+        //?   nice part from scss here - copying everithing !! 
+        #text_page2{
+            @extend #text_page;
+            height: 30vh !important;
+         }
+
+        // !    Second GALLERY
+
+        #second_gall{
+            @extend #first_gall;
+            flex-wrap: wrap;
+            
+            img{
+                display: inline-block;
+                width: 49% !important;      // ?   was working without !important before.. °°
+                &:last-of-type{             //!  if number of images odd...  bla bla
+                    padding-left: 25%;      //!  grid would be better if there is variable number of images
+                    width: 50%;  
+                    padding-bottom: 150px; 
+                }
+        }
+    }
+
+    // !    FOOTER
+    footer{
+        width: 86vw;
+        padding-left: 8vw;
+        text-align: center;
+
+        color: $p_c;
+        @include font_sans;
+
+
+        #text_page3{
+            @include center_flex;
+            @include font_roboto;
+
+            .text_area{
+                width: 55%;
+                text-align: center;
+                margin: 100px 0;
+           
+                h2{
+                    @include font_roboto;
+                    color: $h_c;
+                    font-weight: 300;
+                    font-size: 2em;
+                }
+            }
+        }
+
+            //*   3 PART TEXT FOOTER
+            #flex_footer{
+                width: 94%;
+                margin-left: 3%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                #first_a{
+                    display: inline-block;
+                    width: 30%;
+                    // text-align: left;
+                    img{
+                        display: inline-block;
+                        width: 200px;
+                    }
+                    p{
+                        margin-bottom: 0;
+                    }
+                }
+
+                #second_a{
+                    width: 50%;
+                }
+
+                #just_last_link{
+                    width: 25%;
+                    text-align: right;
+                    a{
+                        color: $p_c;
+                        text-decoration: none;
+                        &:hover{
+                            opacity: .5;
+                            transition: 1s;
+                        }
+                    }
+                }
+
+            }
+
+           
+        #last_words{
+            text-align: right;
+            font-size: 1.1em;
+            color: $h_c;
+            margin-top: 40px;
+        }      
+    }   
+}
